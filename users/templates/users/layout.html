@@ -13,7 +13,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="https://dl.dropboxusercontent.com/s/vqp7i2tv6uvc1gs/logofenice.jfif?dl=0"
+      href="#"
     />
     <!-- Bootstrap CSS -->
     <link
@@ -52,20 +52,20 @@
     </style>
 
     {% block cssfiles %}{% endblock cssfiles %}
-    <title>Fenice</title>
+    <title>Skicruit</title>
   </head>
 
   <body>
     {% if not rec_navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <a class="navbar-brand" href="{% url 'detail-candidates' %}">
+      <a class="navbar-brand" href="#">
         <img
           src="https://dl.dropboxusercontent.com/s/vqp7i2tv6uvc1gs/logofenice.jfif?dl=0"
           width="30"
           height="30"
           class="d-inline-block align-top mr-3"
           alt=""
-        /><b>Fenice</b>
+        /><b>Skicruit</b>
       </a>
       <button
         class="navbar-toggler"
@@ -80,7 +80,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link {{ home_page }}" href="{% url 'home' %}"
+          <a class="nav-item nav-link {{ home_page }}" href="#"
             >Job Search</a
           >
           <a
@@ -90,21 +90,21 @@
           >
           <a
             class="nav-item nav-link {{ intel_page }}"
-            href="{% url 'intelligent-search' %}"
+            href="#"
             >Get Relevant Jobs</a
           >
           <a
             class="nav-item nav-link {{ account_page }}"
-            href="{% url 'account' %}"
+            href="#"
             >My Account</a
           >
           {% if user.is_authenticated %}
           <a
             class="nav-item nav-link btn btn-danger ml-4 mr-4 text-light"
-            href="{% url 'logout' %}"
+            href="#"
             >Logout</a
           >
-          <a class="nav-item nav-link" href="{% url 'add-job' %}"
+          <a class="nav-item nav-link" href="#"
             >Recruiters/ Employers</a
           >
           {% else %}
@@ -113,7 +113,7 @@
             href="{% url 'login' %}"
             >Login</a
           >
-          <a class="nav-item nav-link" href="{% url 'detail-recruiters' %}"
+          <a class="nav-item nav-link" href="#"
             >Recruiters/ Employers</a
           >
           {% endif %}
@@ -122,7 +122,7 @@
     </nav>
     {% else %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <a class="navbar-brand" href="{% url 'detail-recruiters' %}">
+      <a class="navbar-brand" href="#">
         <img
           src="https://dl.dropboxusercontent.com/s/vqp7i2tv6uvc1gs/logofenice.jfif?dl=0"
           width="30"
@@ -146,22 +146,22 @@
         <div class="navbar-nav">
           <a
             class="nav-item nav-link {{ rec_home_page }}"
-            href="{% url 'detail-recruiters' %}"
+            href="#"
             >Home</a
           >
           <a
             class="nav-item nav-link {{ add_job_page }}"
-            href="{% url 'add-job' %}"
+            href="#"
             >Add Job Post</a
           >
           <a
             class="nav-item nav-link {{ manage_jobs_page }}"
-            href="{% url 'job-list' %}"
+            href="#"
             >Manage Your Job Posts</a
           >
           <a
             class="nav-item nav-link {{ search_candidates_page }}"
-            href="{% url 'search-candidates' %}"
+            href="#"
             >Seach Candidates</a
           >
           {% if user.is_authenticated %}
@@ -187,7 +187,7 @@
     {% endif %}
     <div class="container">{% block content %}{% endblock content %}</div>
 
-    <footer>
+    {% comment %} <footer>
       <hr my-2 />
       <div class="row">
         <div class="col-sm-6 col-md-4 footer-navigation">
@@ -242,7 +242,7 @@
           >Image vectors by - www.freepik.com</a
         >
       </p>
-    </footer>
+    </footer> {% endcomment %}
 
     <!-- JS Files -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

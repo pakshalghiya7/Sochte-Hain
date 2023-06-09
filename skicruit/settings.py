@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'candidate',
     'crispy_forms',
     'django_countries',
+    
     # 'django_cleanup.apps.CleanupConfig',###Search###
 
     #allauth specific-> 'django.contrib.admin','django.contrib.messages' and below specified
@@ -92,6 +93,7 @@ TEMPLATES = [
 ]
 ########Search about this portion later on what It does################33
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 LOGIN_URL = 'login'
 SITE_ID = 2
