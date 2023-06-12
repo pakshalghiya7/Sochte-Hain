@@ -1,9 +1,12 @@
-<html>
+{% extends "users/layout.html" %} 
+ {% comment %} GitHub ma Profile Page nu Template che Joi levu {% endcomment %}
+ <html>
     <head>
-{% comment %} {% extends "users/layout.html" %}  {% endcomment %}
+
 {% load static %} 
 {% load crispy_forms_tags %}
-{% block content %} <br /><br />
+{% block content %} 
+<br /><br />
 <link href="{% static 'profile.css' %}" rel="stylesheet">     
     </head>
     <body>
@@ -17,35 +20,38 @@
           <br />
           <form class="form-signin">
             <div class="form-group">
-              <p>Name: {{ profile.first_Name }}</p>
+              <p>Name: {{ data.first_Name }}</p>
               <p>Email: {{ u.email }}</p>
               <p>Country: {{ profile.country.name }}</p>
               <p>Location: {{ profile.location }}</p>
               <p>Graduation Year: {{ profile.grad_year }}</p>
               <p>Looking For: {{ profile.looking_for }}</p>
-              {% if profile.resume %}
+              {% if data.resume %}
               <p>
                 Resume:
-                <a href="{{ profile.resume.url }}">Click to View/Download</a>
+                <a href="{{ data.resume.url }}">Click to View/Download</a>
               </p>
               {% else %}
               <p>Resume: Not Provided</p>
-              {% endif %} {% if request.user == u %}
-              <hr class="my-4" />
-              <a
-                class="btn btn-warning btn-block"
-                href="{% url 'edit-profile' %}"
-                >Edit Profile</a
-              ><br />
+              {% endif %} 
 
-              <a class="btn btn-primary btn-block" href="{% url 'saved-jobs' %}"
-                >Saved Jobs</a
-              ><br />
-              <a
-                class="btn btn-success btn-block"
-                href="{% url 'applied-jobs' %}"
-                >Applied Jobs</a
-              >
+
+              {% if request.user == u %}
+                  <hr class="my-4" />
+                  <a
+                  class="btn btn-warning btn-block"
+                  href="{% url 'edit-profile' %}"
+                  >Edit Profile</a
+                  ><br />
+
+                  <a class="btn btn-primary btn-block" href="{% url 'saved-jobs' %}"
+                  >Saved Jobs</a
+                  ><br />
+                  <a
+                  class="btn btn-success btn-block"
+                  href="{% url 'applied-jobs' %}"
+                  >Applied Jobs</a
+                  >
               {% endif %}
             </div>
           </form>
@@ -115,5 +121,6 @@
 </div>
 
 </body>
- 
-{% endblock content %}
+ {% endblock content %}
+
+
